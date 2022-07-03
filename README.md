@@ -11,8 +11,6 @@
 
 Перейдите в папку, в которой хотите запустить программу и в консоли введите следующую команду:
 ```shell
-git clone https://github.com/APTEMmm/handman.git && \
-cd handman && \
 ruby main.rb
 ```
 
