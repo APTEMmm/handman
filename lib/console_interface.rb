@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+require 'colorize'
 
 class ConsoleInterface
   FIGURES =
@@ -11,16 +11,15 @@ class ConsoleInterface
   end
 
   def print_out
+    puts "Слово: #{word_to_show}".colorize(:light_blue)
+    puts figure.colorize(:magenta)
+    puts
+    puts "Ошибки (#{@game.errors_made}): #{errors_to_show}".colorize(:red)
     puts <<~END
-      Слово: #{word_to_show}
-       #{figure}
-
-      Ошибки (#{@game.errors_made}): #{errors_to_show}
       У вас осталось ошибок: #{@game.errors_allowed}
     
 
     END
-
     if @game.won?
       puts 'Поздравляем, вы выиграли!'
     elsif @game.lost?
