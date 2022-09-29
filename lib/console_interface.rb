@@ -3,8 +3,8 @@ require 'colorize'
 class ConsoleInterface
   FIGURES =
     Dir["#{__dir__}/../data/figures/*.txt"]
-      .sort
-      .map { |file_name| File.read(file_name) }
+    .sort
+    .map { |file_name| File.read(file_name) }
 
   def initialize(game)
     @game = game
@@ -17,7 +17,7 @@ class ConsoleInterface
     puts "Ошибки (#{@game.errors_made}): #{errors_to_show}".colorize(:red)
     puts <<~END
       У вас осталось ошибок: #{@game.errors_allowed}
-    
+
 
     END
     if @game.won?
